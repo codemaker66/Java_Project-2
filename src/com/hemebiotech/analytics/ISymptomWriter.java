@@ -10,7 +10,7 @@ import java.util.Map;
 public interface ISymptomWriter {
 
 	/**
-	 * If no data is available, return an empty map.
+	 * This method order the map that we get and print the result in a new file.
 	 * 
 	 * @param map contains all the symptoms with there correct count.
 	 */

@@ -8,9 +8,7 @@ import java.util.TreeMap;
 public class WriteSymptomDataIntoFile implements ISymptomWriter {
 
 	/**
-	 * This method order the map that we get and print the result in a new file.
-	 * 
-	 * @see com.hemebiotech.analytics.ISymptomWriter#writeFile(map)
+	 * @see com.hemebiotech.analytics.ISymptomWriter#writeFile(Map)
 	 */
 	public void writeFile(Map<String, Integer> map) {
 
@@ -18,9 +16,7 @@ public class WriteSymptomDataIntoFile implements ISymptomWriter {
 
 		try {
 
-			TreeMap<String, Integer> data = new TreeMap<String, Integer>();
-
-			data.putAll(map);
+			Map<String, Integer> data = new TreeMap<>(map);
 
 			writer = new FileWriter("result.out");
 
@@ -31,14 +27,9 @@ public class WriteSymptomDataIntoFile implements ISymptomWriter {
 				writer.write(key + " : " + value + "\n");
 			}
 
-		}
-
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
-		}
-
-		finally {
-
+		} finally {
 			if (writer != null) {
 				try {
 					writer.close();
@@ -46,9 +37,6 @@ public class WriteSymptomDataIntoFile implements ISymptomWriter {
 					e.printStackTrace();
 				}
 			}
-
 		}
-
 	}
-
 }

@@ -12,7 +12,9 @@ import java.util.Map;
  */
 public interface ISymptomReader {
 	/**
-	 * If no data is available, return an empty map.
+	 * This method count every symptom in the given file and put every symptom in
+	 * the map below, if the same symptom is found it will update the value of the
+	 * occurrence on the map.
 	 * 
 	 * @return a raw map of all Symptoms obtained from a data source.
 	 */

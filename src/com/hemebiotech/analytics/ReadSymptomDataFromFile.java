@@ -8,29 +8,24 @@ import java.util.Map;
 
 /**
  * Simple brute force implementation.
- *
  */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
 	private String filepath;
 
 	/**
-	 * 
 	 * @param filepath a full or partial path to file with symptom strings in it,
-	 *                 one per line.
+	 * one per line.
 	 */
 	public ReadSymptomDataFromFile(String filepath) {
 		this.filepath = filepath;
 	}
 
 	/**
-	 * This method count every symptom in the given file and put every symptom in
-	 * the map below, if the same symptom is found it will update the value of the
-	 * occurrence on the map.
-	 * 
 	 * @see com.hemebiotech.analytics.ISymptomReader#getSymptoms()
 	 */
 	public Map<String, Integer> getSymptoms() {
+
 		Map<String, Integer> result = new HashMap<String, Integer>();
 
 		if (filepath != null) {
@@ -52,10 +47,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
-			}
-
-			finally {
-
+			} finally {
 				if (reader != null) {
 					try {
 						reader.close();
@@ -63,11 +55,9 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 						e.printStackTrace();
 					}
 				}
-
 			}
 		}
 
 		return result;
 	}
-
 }
