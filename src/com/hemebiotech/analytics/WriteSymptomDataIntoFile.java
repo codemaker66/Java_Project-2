@@ -18,7 +18,7 @@ public class WriteSymptomDataIntoFile implements ISymptomWriter {
 
 			Map<String, Integer> data = new TreeMap<>(map);
 
-			writer = new FileWriter("result.out");
+			writer = new FileWriter("results.out");
 
 			for (Map.Entry<String, Integer> entry : data.entrySet()) {
 				String key = entry.getKey();
